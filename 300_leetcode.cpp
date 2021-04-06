@@ -1,14 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int LIS(vector<int> &arr)
+int LIS(vector<int> &nums)
 {
-    int n = arr.size();
+    int n = nums.size();
     vector<int> temp(n,1);
 
     for(int i=1;i<n;i++){
         for(int j=0;j<i;j++){
-            if(arr[i]>arr[j]){
+            if(nums[i]>nums[j]){
                 temp[i] = max(temp[i],temp[j]+1);
             }
         }
